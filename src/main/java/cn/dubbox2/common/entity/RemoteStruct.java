@@ -15,7 +15,7 @@ public class RemoteStruct implements Serializable {
     //参数类型名称
     private String[] parameterFullTypes;
     //参数结果
-    private Object[] parameterValue;
+    private String[] parameterValue;
 
     public String getClassFullName() {
         return classFullName;
@@ -41,11 +41,11 @@ public class RemoteStruct implements Serializable {
         this.parameterFullTypes = parameterFullTypes;
     }
 
-    public Object[] getParameterValue() {
+    public String[] getParameterValue() {
         return parameterValue;
     }
 
-    public void setParameterValue(Object[] parameterValue) {
+    public void setParameterValue(String[] parameterValue) {
         this.parameterValue = parameterValue;
     }
 }
