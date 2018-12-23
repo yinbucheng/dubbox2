@@ -2,7 +2,6 @@ package cn.dubbox2.common.utils;
 
 import cn.dubbox2.server.base.ServerAttributeHolder;
 import com.alibaba.fastjson.JSON;
-import com.sun.xml.internal.ws.handler.ServerLogicalHandlerTube;
 
 import java.lang.reflect.Method;
 
@@ -52,7 +51,7 @@ public class ReflectUtils {
     public static Object invokeMethod(String className,String methodName,String[] paramterTypes,String[] value){
         Class clazz = ServerAttributeHolder.getClassByName(className);
         Class[] ptyeps = resovleTypes(paramterTypes);
-        Object[] values = resovleValues(value);
+        Object[] values = resovleValues(ptyeps,value);
         Method method = getMethod(clazz,methodName,ptyeps);
         return invokeMethod(clazz,method,values);
     }
